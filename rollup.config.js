@@ -39,5 +39,11 @@ module.exports = {
 		}),
 		// terser(),
 	],
-	external: dependencies,
+	external: [
+		...dependencies,
+		"@modelcontextprotocol/sdk/client/index.js",
+		"@modelcontextprotocol/sdk/client/sse.js",
+		"@modelcontextprotocol/sdk/client/streamableHttp.js",
+		"@modelcontextprotocol/sdk/client/stdio.js",
+	],
 };

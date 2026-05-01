@@ -30,7 +30,8 @@
         "declarationDir": "./dist",
         "declarationMap": true,
         "sourceMap": true,
-        "importHelpers": true
+        "importHelpers": true,
+        "ignoreDeprecations": "6.0"
     },
     "include": [
         "src/**/*"
