@@ -1,0 +1,70 @@
+{
+	"name": "@ismael1361/mcp-engine",
+	"version": "0.1.0",
+	"description": "Uma coleção de funções e utilitários para o Protocolo de Contexto de Modelo (MCP) criada com TypeScript.",
+	"main": "dist/index.js",
+	"module": "dist/index.esm.js",
+	"types": "dist/index.d.ts",
+	"files": [
+		"dist",
+		"resources"
+	],
+	"private": false,
+	"publishConfig": {
+		"access": "public",
+		"registry": "https://registry.npmjs.org/"
+	},
+	"scripts": {
+		"start": "tsx -r tsconfig-paths/register demo/index.ts",
+		"build": "npm run clean && npm run build:types && npm run build:bundles",
+		"clean": "rimraf dist",
+		"build:types": "tsc --emitDeclarationOnly --declaration --outDir dist/types",
+		"build:bundles": "rollup -c --bundleConfigAsCjs",
+		"dev": "rollup -c --bundleConfigAsCjs -w",
+		"test": "jest",
+		"test:watch": "jest --watchAll",
+		"prepublishOnly": "npm run build && npm test",
+		"npm:publish": "npm publish --access=public"
+	},
+	"keywords": [
+		"mcp",
+		"engine",
+		"typescript"
+	],
+	"author": "ISMAEL1361",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ismael1361/mcp-engine.git"
+	},
+	"bugs": {
+		"url": "https://github.com/ismael1361/mcp-engine/issues"
+	},
+	"homepage": "https://github.com/ismael1361/mcp-engine#readme",
+	"devDependencies": {
+		"@rollup/plugin-commonjs": "^25.0.0",
+		"@rollup/plugin-json": "^6.1.0",
+		"@rollup/plugin-node-resolve": "^15.0.0",
+		"@rollup/plugin-terser": "^0.4.0",
+		"@rollup/plugin-typescript": "^11.0.0",
+		"@types/jest": "^29.5.14",
+		"jest": "^29.0.0",
+		"jest-environment-node": "^30.1.2",
+		"rimraf": "^6.0.1",
+		"rollup": "^3.0.0",
+		"rollup-plugin-dts": "^6.0.0",
+		"ts-jest": "^29.0.0",
+		"tslib": "^2.8.1",
+		"@types/node": "^25.6.0",
+		"ts-node": "^10.9.2",
+		"tsconfig-paths": "^4.2.0",
+		"tsx": "^4.21.0",
+		"typescript": "^6.0.3"
+	},
+	"dependencies": {
+		"@modelcontextprotocol/sdk": "^1.29.0",
+		"ky": "^1.14.3",
+		"open": "^11.0.0",
+		"openid-client": "^6.8.4"
+	}
+}
