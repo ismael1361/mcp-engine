@@ -1,6 +1,6 @@
 {
 	"name": "@ismael1361/mcp-engine",
-	"version": "0.1.0",
+	"version": "0.1.21",
 	"description": "Uma coleção de funções e utilitários para o Protocolo de Contexto de Modelo (MCP) criada com TypeScript.",
 	"main": "dist/index.js",
 	"module": "dist/index.esm.js",
